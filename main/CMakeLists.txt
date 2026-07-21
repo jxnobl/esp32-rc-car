@@ -3,6 +3,14 @@ idf_component_register(
         "main.c"
         "motor.c"
         "wifi.c"
+        "webserver.c"
     INCLUDE_DIRS
         "."
+    REQUIRES
+        esp_driver_gpio
+        esp_driver_ledc
+        esp_wifi
+        esp_http_server
+        esp_netif
+        nvs_flash
 )

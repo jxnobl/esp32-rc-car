@@ -3,6 +3,7 @@
 #include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "webserver.h"
 
 void app_main(void)
 {
@@ -10,20 +11,12 @@ void app_main(void)
 
     wifi_init_softap();
 
+    start_webserver();
+
     motor_init();
 
     while (1)
     {
-        rear_forward(50);
-        vTaskDelay(pdMS_TO_TICKS(2000));
-
-        rear_stop();
-        vTaskDelay(pdMS_TO_TICKS(1000));
-
-        rear_backward(50);
-        vTaskDelay(pdMS_TO_TICKS(2000));
-
-        rear_stop();
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
