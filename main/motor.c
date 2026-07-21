@@ -98,18 +98,16 @@ void motor_init(void)
 
 void rear_forward(uint8_t speed)
 {
+    gpio_set_level(AIN1_GPIO, 0);
+    gpio_set_level(AIN2_GPIO, 1);
     set_speed(speed);
-
-    gpio_set_level(AIN1_GPIO, 1);
-    gpio_set_level(AIN2_GPIO, 0);
 }
 
 void rear_backward(uint8_t speed)
 {
+    gpio_set_level(AIN1_GPIO, 1);
+    gpio_set_level(AIN2_GPIO, 0);
     set_speed(speed);
-
-    gpio_set_level(AIN1_GPIO, 0);
-    gpio_set_level(AIN2_GPIO, 1);
 }
 
 void rear_stop(void)
