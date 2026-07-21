@@ -1,0 +1,24 @@
+# ESP-IDF Build
+build/
+
+# ESP-IDF generated files
+sdkconfig.old
+dependencies.lock
+
+# IDE
+.settings/
+.project
+.cproject
+
+# VS Code
+.vscode/
+
+# Eclipse
+.metadata/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log
